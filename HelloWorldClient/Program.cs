@@ -10,34 +10,52 @@ namespace HelloWorldClient
 {
     class Program
     {
+        private static EventWaitHandle ewh;
+
+        //static void Main(string[] args)
+        //{
+        //    Stopwatch sw = new Stopwatch();
+
+        //    //using (var client = new HelloWorldServiceClient("ElsePipe"))
+        //    //{
+        //    //    client.Ping();
+        //    //}
+
+
+
+        //    sw.Start();
+        //    //Console.WriteLine(client.GetMessage("Per Gustafsson"));
+        //    //var client = new HelloWorldServiceClient("netTCPElseBinding");
+        //    for (int i = 0; i < 30; i++)
+        //    {
+
+        //        var client = new HelloWorldServiceClient("ElseBasicHttp");
+
+        //        Thread.Sleep(1000);
+        //        client.Ping();
+        //        Console.WriteLine("Pinged {0}", i);
+
+
+
+        //    }
+        //    sw.Stop();
+        //    Console.WriteLine("Elapsed={0}", sw.Elapsed)
+
+        //}
+
         static void Main(string[] args)
         {
             Stopwatch sw = new Stopwatch();
 
-            //using (var client = new HelloWorldServiceClient("ElsePipe"))
-            //{
-            //    client.Ping();
-            //}
-
-
-
+            ewh = new EventWaitHandle(false, EventResetMode.AutoReset, "elseReset");
             sw.Start();
-            //Console.WriteLine(client.GetMessage("Per Gustafsson"));
-            //var client = new HelloWorldServiceClient("netTCPElseBinding");
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 1; i++)
             {
-
-                var client = new HelloWorldServiceClient("ElseBasicHttp");
-
-                Thread.Sleep(1000);
-                client.Ping();
-                Console.WriteLine("Pinged {0}", i);
-
-
-
+                ewh.Set();
             }
             sw.Stop();
             Console.WriteLine("Elapsed={0}", sw.Elapsed);
+
 
         }
     }
