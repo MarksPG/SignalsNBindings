@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Threading;
 
 namespace HelloWorldClient
 {
@@ -23,12 +24,14 @@ namespace HelloWorldClient
             sw.Start();
             //Console.WriteLine(client.GetMessage("Per Gustafsson"));
             //var client = new HelloWorldServiceClient("netTCPElseBinding");
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 30; i++)
             {
 
                 var client = new HelloWorldServiceClient("ElseBasicHttp");
+
+                Thread.Sleep(1000);
                 client.Ping();
-                
+                Console.WriteLine("Pinged {0}", i);
 
 
 

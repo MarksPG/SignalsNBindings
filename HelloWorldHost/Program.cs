@@ -15,6 +15,25 @@ namespace HelloWorldHost
             host.Open();
             Console.WriteLine("HelloWorldService is now running. ");
             Console.WriteLine("Press any key to stop it...");
+
+
+            while (true)
+            {
+                if (!HelloWorldService.HelloWorldService.elseReset.WaitOne(3000))
+                {
+                    Console.WriteLine("No ping for 3 seconds");
+                }
+            }
+            //while(true)
+            //{
+            //    HelloWorldService.HelloWorldService.elseReset.WaitOne(3000);
+            //    Console.WriteLine("No ping for 3 seconds");
+            //}
+            
+
+
+
+
             Console.ReadKey();
             host.Close();
         }
