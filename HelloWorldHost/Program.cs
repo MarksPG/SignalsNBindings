@@ -27,11 +27,19 @@ namespace HelloWorldHost
             //}
 
             var ewh = new EventWaitHandle(false, EventResetMode.AutoReset, "elseReset");
+            int i = 0;
             while (true)
             {
                 if(ewh.WaitOne(3000))
                 {
-                    Console.WriteLine("Ping!!");
+                    i++;
+                    if (i % 1000 == 0)
+                    {
+                        Console.WriteLine("Ping!!");
+                    }
+                    
+                    
+
                 }
                 else
                 {

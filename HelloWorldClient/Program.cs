@@ -49,8 +49,9 @@ namespace HelloWorldClient
 
             ewh = new EventWaitHandle(false, EventResetMode.AutoReset, "elseReset");
             sw.Start();
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 100000; i++)
             {
+                Thread.Sleep(1);
                 ewh.Set();
             }
             sw.Stop();
