@@ -11,20 +11,20 @@
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName="IHelloWorldService")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IHelloWorldService")]
 public interface IHelloWorldService
 {
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloWorldService/GetMessage", ReplyAction="http://tempuri.org/IHelloWorldService/GetMessageResponse")]
-    string GetMessage(string name);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloWorldService/GetMessage", ReplyAction="http://tempuri.org/IHelloWorldService/GetMessageResponse")]
-    System.Threading.Tasks.Task<string> GetMessageAsync(string name);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloWorldService/Ping", ReplyAction="http://tempuri.org/IHelloWorldService/PingResponse")]
+
+    //[System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IHelloWorldService/GetMessage", ReplyAction = "http://tempuri.org/IHelloWorldService/GetMessageResponse")]
+    //string GetMessage(string name);
+
+    //[System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IHelloWorldService/GetMessage", ReplyAction = "http://tempuri.org/IHelloWorldService/GetMessageResponse")]
+    //System.Threading.Tasks.Task<string> GetMessageAsync(string name);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IHelloWorldService/Ping", ReplyAction = "http://tempuri.org/IHelloWorldService/PingResponse")]
     void Ping();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHelloWorldService/Ping", ReplyAction="http://tempuri.org/IHelloWorldService/PingResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IHelloWorldService/Ping", ReplyAction = "http://tempuri.org/IHelloWorldService/PingResponse")]
     System.Threading.Tasks.Task PingAsync();
 }
 
@@ -37,46 +37,46 @@ public interface IHelloWorldServiceChannel : IHelloWorldService, System.ServiceM
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 public partial class HelloWorldServiceClient : System.ServiceModel.ClientBase<IHelloWorldService>, IHelloWorldService
 {
-    
+
     public HelloWorldServiceClient()
     {
     }
-    
-    public HelloWorldServiceClient(string endpointConfigurationName) : 
+
+    public HelloWorldServiceClient(string endpointConfigurationName) :
             base(endpointConfigurationName)
     {
     }
-    
-    public HelloWorldServiceClient(string endpointConfigurationName, string remoteAddress) : 
+
+    public HelloWorldServiceClient(string endpointConfigurationName, string remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public HelloWorldServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public HelloWorldServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public HelloWorldServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public HelloWorldServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
             base(binding, remoteAddress)
     {
     }
-    
-    public string GetMessage(string name)
-    {
-        return base.Channel.GetMessage(name);
-    }
-    
-    public System.Threading.Tasks.Task<string> GetMessageAsync(string name)
-    {
-        return base.Channel.GetMessageAsync(name);
-    }
-    
+
+    //public string GetMessage(string name)
+    //{
+    //    return base.Channel.GetMessage(name);
+    //}
+
+    //public System.Threading.Tasks.Task<string> GetMessageAsync(string name)
+    //{
+    //    return base.Channel.GetMessageAsync(name);
+    //}
+
     public void Ping()
     {
         base.Channel.Ping();
     }
-    
+
     public System.Threading.Tasks.Task PingAsync()
     {
         return base.Channel.PingAsync();

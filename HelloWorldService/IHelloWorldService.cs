@@ -11,11 +11,7 @@ namespace HelloWorldService
     public interface IHelloWorldService
     {
         [OperationContract]
-        string GetMessage(string name);
-
-        [OperationContract]
         void Ping();
-        
     }
 }
 
